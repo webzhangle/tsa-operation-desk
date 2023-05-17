@@ -1,0 +1,83 @@
+.tsa-dragResize {
+    outline: rgb(252, 135, 55) dashed 1PX;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    box-sizing: content-box;
+    cursor: move;
+    >* {
+        display: block;
+        width: 100%;
+        height: 100%;
+        line-height: inherit;
+        font-size: inherit;
+        color: inherit;
+        text-align: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        font-size: inherit;
+        text-align: inherit;
+        text-decoration: inherit;
+        background-color: inherit;
+    }
+    &.active {
+        .tsa-stick {
+            display: block;
+        }
+    }
+}
+
+.tsa-stick {
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    font-size: 12PX;
+    background: #ffffff;
+    border: 0.5PX solid #6c6c6c;
+    box-shadow: 0 0 2PX #bbb;
+    width: 8PX;
+    height: 8PX;
+}
+.tsa-stick-tl {
+    cursor: nwse-resize;
+    top: -4PX;
+    left: -4PX;
+}
+.tsa-stick-tm {
+    cursor: ns-resize;
+    top: -4PX;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.tsa-stick-tr {
+    cursor: nesw-resize;
+    top: -4PX;
+    right: -4PX;
+}
+.tsa-stick-mr {
+    cursor: ew-resize;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -4PX;
+}
+.tsa-stick-br {
+    cursor: nwse-resize;
+    bottom: -4PX;
+    right: -4PX;
+}
+.tsa-stick-bm {
+    cursor: ns-resize;
+    bottom: -4PX;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.tsa-stick-bl {
+    cursor: nesw-resize;
+    bottom: -4PX;
+    left: -4PX;
+}
+.tsa-stick-ml {
+    cursor: ew-resize;
+    left: -4PX;
+    top: 50%;
+    transform: translateY(-50%);
+}

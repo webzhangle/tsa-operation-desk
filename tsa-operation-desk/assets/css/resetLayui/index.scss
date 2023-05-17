@@ -1,0 +1,18 @@
+
+$color: #409EFF;
+.layui-form-select dl dd.layui-this {
+    color: $color;
+}
+.layui-form-checked[lay-skin=primary] i {
+    border-color: $color!important;
+    background-color: $color;
+    color: #fff;
+}
+.layui-form-checkbox[lay-skin=primary]:hover {
+    .layui-icon {
+        border-color: $color!important;
+    }
+}
+.layui-laydate .layui-this, .layui-laydate .layui-this>div {
+    background-color: $color!important;
+}

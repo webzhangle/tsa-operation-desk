@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4052936 */
+  src: url('iconfont.eot?t=1683600742614'); /* IE9 */
+  src: url('iconfont.eot?t=1683600742614#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('iconfont.woff2?t=1683600742614') format('woff2'),
+       url('iconfont.woff?t=1683600742614') format('woff'),
+       url('iconfont.ttf?t=1683600742614') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-jiahao2fill:before {
+  content: "\e728";
+}
+
+.icon-upbxiangshang:before {
+  content: "\e61b";
+}
+
+.icon-jiahao:before {
+  content: "\eaf3";
+}
+
+.icon-juzhongduiqi:before {
+  content: "\ec80";
+}
+
+.icon-youduiqi:before {
+  content: "\ec82";
+}
+
+.icon-zitijiacu:before {
+  content: "\ec83";
+}
+
+.icon-zitixiahuaxian:before {
+  content: "\ec87";
+}
+
+.icon-zitiyanse:before {
+  content: "\ec85";
+}
+
+.icon-zuoduiqi:before {
+  content: "\ec86";
+}
+
+.icon-T-qingxie:before {
+  content: "\e71e";
+}
+
+.icon-jianshao:before {
+  content: "\e8c5";
+}
+

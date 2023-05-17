@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .target {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+        .container {
+            display: flex;
+        }
+        .submit {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: right;background-color: #ccc;
+        }
+    </style>
+    <link rel="stylesheet" href="../dist/css/style.css">
+</head>
+<body>
+    
+    <div class="submit">
+        <button>提交按钮</button>
+    </div>
+    <div class="container" id="container"></div>
+</body>
+<script src="https://cdn.bootcss.com/babel-polyfill/7.6.0/polyfill.js"></script>
+<script src="../dist/tsa-operation-desk.min.js"></script>
+<script>
+    var obj = {"templateId":"0783ae852a994862880a59fa0f8a7c7e","status":2,"filename":"数字证书调用授权委托书.pdf","sourceStorePathUrl":"http://contract-sign-test.oss-cn-beijing.aliyuncs.com/template/320472065/0/pdf/20230417/0783ae852a994862880a59fa0f8a7c7e.pdf?Expires=1683775221&OSSAccessKeyId=LTAI4GBjBAbhNb6VtQFyvKrY&Signature=AQITADQ%2FEiDzghMmhfPnqIvIE7A%3D","templateStorePathUrl":"http://contract-sign-test.oss-cn-beijing.aliyuncs.com/template/320472065/0/pdf/20230417/0783ae852a994862880a59fa0f8a7c7e.pdf?Expires=1683775221&OSSAccessKeyId=LTAI4GBjBAbhNb6VtQFyvKrY&Signature=AQITADQ%2FEiDzghMmhfPnqIvIE7A%3D","createdAt":1681720385000,"signComponents":{"componentsList":[{"areaType":1,"componentType":5,"context":{"signature":{"location":"","reason":""},"fillText":"1684944000000","format":"YYYY-MM-dd","style":{"width":73.0,"height":15.0,"fontSize":12,"fontColor":{"red":0,"green":0,"blue":0},"fontFamily":"SIM_SUN","textAlign":"LEFT","fontStyle":"NORMAL","fontWeight":"NORMAL","textDecoration":"NONE","maxCount":0,"rows":2,"lineHeight":15},"position":{"x":26.0,"y":190.0,"pageNum":1},"url":"","required":true},"id":"137f20b1d2bb4f3bb1515183e7b9ad9a","description":"qqq"},{"areaType":1,"componentType":1,"context":{"signature":{"location":"","reason":""},"fillText":"123213","format":"","style":{"width":160.0,"height":15.0,"fontSize":12,"fontColor":{"red":255,"green":0,"blue":0},"fontFamily":"SIM_SUN","textAlign":"LEFT","fontStyle":"NORMAL","fontWeight":"NORMAL","textDecoration":"NONE","maxCount":13,"rows":2,"lineHeight":15},"position":{"x":374.0,"y":106.5,"pageNum":1},"url":"","required":true},"id":"49b1ace1cf024b9590c38a2e67d72f6a","description":""},{"componentKey":"甲方","areaType":2,"componentType":3,"context":{"signature":{"location":"","reason":""},"fillText":"","format":"","style":{"width":52.0,"height":37.0,"fontSize":12,"fontColor":{"red":0,"green":0,"blue":0},"fontFamily":"SIM_SUN","textAlign":"LEFT","fontStyle":"NORMAL","fontWeight":"NORMAL","textDecoration":"NONE","maxCount":0,"rows":2,"lineHeight":15},"position":{"x":327.0,"y":260.0,"pageNum":1},"url":"","required":true},"id":"7b2d3d857c0b487e8ed534c606504bf7","description":""},{"componentKey":"甲方","areaType":2,"componentType":4,"context":{"signature":{"location":"","reason":""},"fillText":"","format":"","style":{"width":119.1,"height":119.0,"fontSize":12,"fontColor":{"red":0,"green":0,"blue":0},"fontFamily":"SIM_SUN","textAlign":"LEFT","fontStyle":"NORMAL","fontWeight":"NORMAL","textDecoration":"NONE","maxCount":0,"rows":2,"lineHeight":15},"position":{"x":380.0,"y":335.0,"pageNum":1},"url":"","required":true},"id":"6acf66e6c78a4db89555135ae0b39431","description":""}],"templateId":"0783ae852a994862880a59fa0f8a7c7e"},"pageNumber":1,"document":[{"pageNo":1,"height":841,"width":595,"ossPathStoreUrl":"http://contract-sign-test.oss-cn-beijing.aliyuncs.com/image/320472065/template/450561/1/1.jpeg?Expires=1683775221&OSSAccessKeyId=LTAI4GBjBAbhNb6VtQFyvKrY&Signature=6Bu7UoUgQiTxxk5ft%2BJg69FVZIc%3D"}]}
+    
+    var tsaOperationDesk = new TsaOperationDesk({
+        el: '#container',
+        templateId: obj.templateId, // 必传
+        pageNumber: obj.pageNumber,
+        componentsList: obj.signComponents.componentsList,
+        document: obj.document,
+        signatorys: ["甲方","乙方","丙方","丁方"]
+         
+    })
+</script>
+</html>
