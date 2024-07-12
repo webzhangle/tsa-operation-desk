@@ -4,7 +4,7 @@ export default class TsaName {
     render ({ uuid, description }) {
         return `<div class="tsa-name" id="id-TsaName-${uuid}">
                     <h3>控件名称</h3>
-                    <input type="text" id="id-TsaName-description-${uuid}" value="${description}" class="layui-input" maxlength="8" placeholder="请输入控件名称">
+                    <input type="text" id="id-TsaName-description-${uuid}" value="${description}" class="layui-input" maxlength="8" placeholder="请输入控件名称（最多支持8个字符）">
                 </div>`
     }
     static init (item1) {

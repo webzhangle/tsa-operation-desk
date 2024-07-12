@@ -26,6 +26,7 @@ export default class SignatureName {
                 parent.remove()
                 $(`#${item.uuid}`).remove()
                 let componentKey = parent.attr('data-component-key')
+                console.log(componentKey)
                 let index = signComponentsList[componentKey].children.findIndex(({ uuid }) => {
                     return uuid === item.uuid
                 })

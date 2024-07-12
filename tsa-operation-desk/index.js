@@ -270,6 +270,7 @@ class TsaOperationDesk {
                 })
                 that.signComponentsList[componentKey].children = []
                 parent.hide()
+                $(`${that.el} .drag-area .sign`).hide()
             })
         })
         // 点击添加角色按钮
@@ -393,10 +394,12 @@ class TsaOperationDesk {
                         if (currentObj.componentType === 2) { // 多行行文本
                             maxCount = changeWidthToFontCount(width, fontSize) * rows
                         }
+                        console.log(this.componentKey)
+                        console.log('***************')
                         let obj = {
                             "key": generateUUID(),
                             "orderly": new Date().getTime(), // 用时间戳排序
-                            "componentKey": null,
+                            "componentKey": this.componentKey,
                             "areaType": currentObj.areaType,
                             "componentType": currentObj.componentType,
                             "context": {
@@ -454,11 +457,11 @@ class TsaOperationDesk {
                             obj.componentKey = that.componentKey
                             $(`#id-${this.signComponentsList[this.componentKey].uuid} .content`).append(`
                                 <!-- 签名组件 -->
-                                ${currentObj.componentType === 3 ? `${new SignatureName().render(obj)}` : ''}
+                                ${currentObj.componentType === 3 ? `${new SignatureName().render(obj, that.componentKey)}` : ''}
                                 <!-- 签章组件 -->
-                                ${currentObj.componentType === 4 ? `${new SignaturePicture().render(obj)}` : ''}
+                                ${currentObj.componentType === 4 ? `${new SignaturePicture().render(obj, that.componentKey)}` : ''}
                                 <!-- 日期组件的配置项 -->
-                                ${currentObj.componentType === 5 ? `${new SignDate().render(obj)}` : ''}
+                                ${currentObj.componentType === 5 ? `${new SignDate().render(obj, that.componentKey)}` : ''}
                             `)
                             this.signComponentsList[this.componentKey].children.push(obj)
                         }
@@ -638,6 +641,7 @@ class TsaOperationDesk {
                     $(`.component-${item1.uuid}`).children('.content').show()
                 }
                 if (item1.areaType === 2) {
+
                     $(`${that.el} .tab`).find('li').eq(1).addClass('active')
                     $(`${that.el} .tab`).find('li').eq(0).removeClass('active')
                     $(`${that.el} .fill-components-container`).hide()
@@ -655,6 +659,8 @@ class TsaOperationDesk {
 
                     $(`.component-${item1.uuid}`).find(`#checkbox-${item1.uuid}`).prop("checked", true)
                     $(`.component-${item1.uuid}`).siblings().find(`.signCheckbox`).prop("checked", false)
+                    // console.log(item1)
+                    that.componentKey = item1.componentKey
                     layui.form.render("checkbox")
                     Object.keys(that.signComponentsList).map(key => {
                         that.signComponentsList[key].show = false
@@ -808,8 +814,6 @@ class TsaOperationDesk {
                         isSaveFalseArray.push(that.signComponentsList[key].uuid)
                     }
                 })
-                console.log(isSaveFalseArray.length)
-                console.log(that.signatorys.length)
                 if (isSaveFalseArray.length === that.signatorys.length) { // 全是false
                     that.componentKey = null
                     document.querySelector(that.el + " .drag-area .sign").style.display = "none"

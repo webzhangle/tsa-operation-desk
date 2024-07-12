@@ -12,6 +12,7 @@ export default class TsaTooltip {
         let that = this
         document.querySelector(`#${that.id}`).onmouseover = function (e) {
             let currentEl = document.querySelector(`#tooltip-${this.id}`)
+            currentEl.style.display = 'flex'
             let width = currentEl.clientWidth
             let height = currentEl.clientHeight
             // 鼠标按下时，鼠标相对于元素的x坐标
@@ -20,7 +21,6 @@ export default class TsaTooltip {
             var y = e.offsetY;
             let left = e.pageX - x - width/2 + this.offsetWidth/2
             let top = e.pageY - y - height - 10
-            currentEl.style.display = 'block'
             currentEl.style.left = left + 'px'
             currentEl.style.top = top + 'px'
             currentEl = null
